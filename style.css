@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@400;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+header {
+  max-width: 100%;
+  background-color: brown;
+  height: 50px;
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+nav {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 100px;
+} 
+nav > a {
+  text-decoration: none;
+  color: bisque;
+  padding: 0 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+nav > a:hover {
+  border-bottom: 1px solid bisque;
+}
+
+.my_game {
+  max-width: 300px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my_game > * {
+  text-align: center;
+}
+.my_game h2 {
+  margin: 50px 0;
+}
+.my_game input, button{
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: 3px solid brown;
+  /* height: 40px; */
+  padding: 7px 0;
+  min-width: 170px;
+}
+.my_game input button {
+  padding: 10px 15px;
+}
+
+.about_us {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.about_us img {
+  width: 300px;
+  background-color: rgb(170, 226, 226);
+  border-radius: 20px;
+  border: 3px solid brown;
+  margin-right: 50px;
+}
+
+.about_us-description {
+  display: flex;
+  flex-direction: column;
+}
+.about_us-description * {
+  padding: 5px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+h1 {
+  font-size: 45px;
+}
+h2 {
+  font-size: 35px;
+}
+
+.name {
+  font-size: 24px;
+  color: brown;
+}
+.choosed_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.choosed_block h2 {
+  margin-bottom: 30px;
+}
+.choosed_block-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 650px;
+  margin-top: 30px;
+}
+.choosed_block-container > div {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(170, 226, 226);
+  border-radius: 5px;
+}
+.choosed_element {
+  border: 3px solid saddlebrown;
+}
+
+
