@@ -108,7 +108,7 @@ h2 {
 }
 .choosed_block-container {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
   max-width: 650px;
   margin-top: 30px;
@@ -124,6 +124,22 @@ h2 {
 }
 .choosed_element {
   border: 3px solid saddlebrown;
+}
+
+.posts_block {
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.posts_block h2 {
+  text-align: center;
+}
+
+.posts_block-container >* {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: azure;
 }
 
 

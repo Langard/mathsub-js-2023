@@ -494,6 +494,105 @@ for (let i = 0; i < choosedEl.length; i++) {
   choosedEl[i].addEventListener("click", eventFunc)       
 }
 
+// setTimeout(() => {
+//   alert("Время вышло!")
+// }, 2000)
+
+// const timeIsOver = () => {
+//   alert("Время вышло!")
+// }
+// setTimeout(timeIsOver, 2000)
+
+//setInterval(timeIsOver, 3000) //alert срабатывает каждые 3 сек
+
+// const alarm = setInterval(timeIsOver, 3000)
+
+
+// const alarm = setInterval(() => {
+//   let wantToSleep = confirm("Хотите ли вы спать?")
+//   if (wantToSleep) {
+//     console.log("tic")
+//   } else {
+//     clearInterval(alarm)
+//   }
+// }, 3000)
+
+// clearInterval(alarm)
+
+// console.log("1")
+// setTimeout(()=>{
+//   console.log("2")
+// }, 0)
+// console.log("3")
+
+
+
+
+
+
+
+
+
+const postsBlock = document.querySelector(".posts_block-container")
+
+
+fetch ("https://jsonplaceholder.typicode.com/posts")
+//   .then( (res) => {
+//     return res.json()
+// }) первый вариант
+
+  .then( res => res.json()) //короткий вариант стрелочной функции
+  .then( data => {
+    for (el of data) {
+      addPost(el.title, el.body)
+    }
+    // addPost(data[7].title, data[7].body)    
+  })
+  // .catch((err) => {
+  //   // console.log(err)
+  //   console.log(err.message)
+  // }) первый вариант
+
+  .catch(err => console.log(err.message))  //короткий вариант стрелочной функции
+
+  function addPost(title, body) {
+      const postsTitle = document.createElement("h3")
+      const postsBady = document.createElement("span")
+      const postItem = document.createElement("p")
+
+      postsTitle.innerText = title
+      postsBady.innerText = body
+
+      postItem.append(postsTitle, postsBady)
+      postsBlock.append(postItem)     
+  }
+
+  function createPost(title, body, userId) {
+    fetch ("https://jsonplaceholder.typicode.com/posts", {
+      method: 'POST',
+      body: JSON.stringify({
+        // title: title,
+        // body: body,
+        // userId: userId,
+        title,
+        body,
+        userId,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+        
+      .then( res => {
+        console.log(res)
+      }) 
+      .catch(err => console.log(err.message))  
+  }
+  
+  createPost("title", "body", 5)
+
+
+
 
 
 
