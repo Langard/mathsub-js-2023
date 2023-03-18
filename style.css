@@ -9,9 +9,11 @@
 header {
   max-width: 100%;
   background-color: brown;
-  height: 50px;
+  height: 70px;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
 }
 .container {
   width: 1240px;
@@ -21,6 +23,7 @@ header {
 nav {
   height: inherit;
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 50px;
   padding-left: 100px;
@@ -36,9 +39,7 @@ nav > a:hover {
   border-bottom: 1px solid bisque;
 }
 
-main {
-  
-}
+
 .my_game {
   max-width: 300px;
   margin: 0 auto;
