@@ -534,26 +534,26 @@ for (let i = 0; i < choosedEl.length; i++) {
 
 
 const postsBlock = document.querySelector(".posts_block-container")
+const showPostsBTN = document.querySelector(".posts_block")
 
+// fetch ("https://jsonplaceholder.typicode.com/posts")
+// //   .then( (res) => {
+// //     return res.json()
+// // }) первый вариант
 
-fetch ("https://jsonplaceholder.typicode.com/posts")
-//   .then( (res) => {
-//     return res.json()
-// }) первый вариант
+//   .then( res => res.json()) //короткий вариант стрелочной функции
+//   .then( data => {
+//     for (el of data) {
+//       addPost(el.title, el.body)
+//     }
+//     // addPost(data[7].title, data[7].body)    
+//   })
+//   // .catch((err) => {
+//   //   // console.log(err)
+//   //   console.log(err.message)
+//   // }) первый вариант
 
-  .then( res => res.json()) //короткий вариант стрелочной функции
-  .then( data => {
-    for (el of data) {
-      addPost(el.title, el.body)
-    }
-    // addPost(data[7].title, data[7].body)    
-  })
-  // .catch((err) => {
-  //   // console.log(err)
-  //   console.log(err.message)
-  // }) первый вариант
-
-  .catch(err => console.log(err.message))  //короткий вариант стрелочной функции
+//   .catch(err => console.log(err.message))  //короткий вариант стрелочной функции
 
   function addPost(title, body) {
       const postsTitle = document.createElement("h3")
@@ -567,31 +567,43 @@ fetch ("https://jsonplaceholder.typicode.com/posts")
       postsBlock.append(postItem)     
   }
 
-  function createPost(title, body, userId) {
-    fetch ("https://jsonplaceholder.typicode.com/posts", {
-      method: 'POST',
-      body: JSON.stringify({
-        // title: title,
-        // body: body,
-        // userId: userId,
-        title,
-        body,
-        userId,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-        
-      .then( res => {
-        console.log(res)
-      }) 
-      .catch(err => console.log(err.message))  
+  function getPosts() {
+    fetch ("https://jsonplaceholder.typicode.com/posts")
+
+  .then( res => res.json()) 
+  .then( data => {
+    for (el of data) {
+      addPost(el.title, el.body)
+    }
+  })
+  .catch(err => console.log(err.message))  
   }
+
+  // function createPost(title, body, userId) {
+  //   fetch ("https://jsonplaceholder.typicode.com/posts", {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       // title: title,
+  //       // body: body,
+  //       // userId: userId,
+  //       title,
+  //       body,
+  //       userId,
+  //     }),
+  //     headers: {
+  //       'Content-type': 'application/json; charset=UTF-8',
+  //     },
+  //   })
+        
+  //     .then( res => {
+  //       console.log(res)
+  //     }) 
+  //     .catch(err => console.log(err.message))  
+  // }
   
-  createPost("title", "body", 5)
+  // createPost("title", "body", 5)
 
-
+showPostsBTN.onclick = getPosts
 
 
 
